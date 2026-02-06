@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Todo</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>✨ My Preparation Todo</h1>
+
+<form action="/add" method="post" class="task-form">
+    <input type="text" name="task" placeholder="Add task..." required>
+    <button>Add</button>
+</form>
+
+<ul class="task-list">
+{% for task in tasks %}
+<li class="{% if task[2]==1 %}done{% endif %}">
+
+<a href="/toggle/{{task[0]}}" class="checkbox">
+{% if task[2]==1 %}✅{% else %}⬜{% endif %}
+</a>
+
+<span>{{task[1]}}</span>
+
+<a href="/delete/{{task[0]}}" class="delete">🗑</a>
+
+</li>
+{% endfor %}
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+body{
+margin:0;
+font-family:Segoe UI;
+background:linear-gradient(135deg,#667eea,#764ba2);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:20px;
+width:90%;
+max-width:500px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+animation:fadeIn 0.5s ease;
+}
+
+h1{
+text-align:center;
+}
+
+.task-form{
+display:flex;
+gap:10px;
+}
+
+.task-form input{
+flex:1;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+}
+
+.task-form button{
+background:#667eea;
+color:white;
+border:none;
+padding:12px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.task-form button:hover{
+transform:scale(1.05);
+}
+
+.task-list{
+margin-top:20px;
+padding:0;
+}
+
+.task-list li{
+list-style:none;
+background:#f4f6ff;
+padding:12px;
+margin:10px 0;
+border-radius:12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+animation:slideUp 0.3s ease;
+}
+
+.done span{
+text-decoration:line-through;
+color:gray;
+}
+
+.checkbox{
+text-decoration:none;
+margin-right:10px;
+}
+
+.delete{
+text-decoration:none;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes slideUp{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@media(max-width:500px){
+.container{padding:20px;}
+}
