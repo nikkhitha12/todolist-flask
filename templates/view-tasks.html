@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Tasks</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        table { border-collapse: collapse; width: 50%; }
+        th, td { border: 1px solid #888; padding: 10px; text-align: left; }
+        th { background-color: #4CAF50; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>All Tasks</h1>
+    <table>
+        <tr><th>ID</th><th>Task</th><th>Completed</th></tr>
+        {% for t in tasks %}
+        <tr>
+            <td>{{ t[0] }}</td>
+            <td>{{ t[1] }}</td>
+            <td>{{ "Yes" if t[2] else "No" }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
